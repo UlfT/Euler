@@ -19,6 +19,6 @@ class Test001Multiples(unittest.TestCase):
         self.assertEqual(mut.sum_of_3_5_multiples(10), 23, "Textbook example of 10 and 23 failed")
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover
 
 # nosestests
