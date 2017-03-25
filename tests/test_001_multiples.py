@@ -15,10 +15,13 @@ class Test001Multiples(unittest.TestCase):
         self.assertFalse(mut.is_multiple_of_3_or_5(7), "7 should not be a multiple")
 
     def test_sum(self):
-        """ Tests the sum_of_3_5_multiples method. Only tests for positie numbers"""
+        """ Tests the sum_of_3_5_multiples method. Only tests for positive numbers"""
         self.assertEqual(mut.sum_of_3_5_multiples(10), 23, "Textbook example of 10 and 23 failed")
+
+    def test_exercise(self):
+        """ TODO: Add a timer that fires if the calculation takes more than 1 second
+            But that does not work on Windows so screw it """
+        self.assertEqual(mut.run_main(), 233168, "Correct answer should be 233168")
 
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
-
-# nosestests

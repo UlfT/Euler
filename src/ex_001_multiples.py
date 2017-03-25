@@ -19,10 +19,10 @@ def sum_of_3_5_multiples(upto):
 
 def run_main():
     """ Run the exercise as stated on the Euler website and wrapped in a timer"""
-    import tools.timer_decorator
-    wrapped_function = tools.timer_decorator.wrap(sum_of_3_5_multiples)
-    wrapped_function(1000)
+    import src.tools.timer_decorator
+    wrapped_function = src.tools.timer_decorator.wrap(sum_of_3_5_multiples)
+    return wrapped_function(1000)
 
 if __name__ == "__main__":
-    run_main()
+    run_main() # pragma: no cover
     
