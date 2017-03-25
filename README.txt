@@ -1,4 +1,4 @@
-pylint FILENAME
+pylint MODULENAME
 python -m unittest tests.TESTNAME # Sets path variables
 python -m unittest discover
 nose2
