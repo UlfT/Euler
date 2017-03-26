@@ -1,27 +1,31 @@
-""" Test class for ex_001_multiples"""
-import unittest
+""" Tests for ex_001_multiples"""
+from nose2.tools import such
+import nose2 # pragma: no cover
 from src import ex_001_multiples as mut # mut = Module Under Test
 
 
-class Test001Multiples(unittest.TestCase):
-    """ Test class for ex_001_multiples """
-
-    def test_is_multiple(self):
+with such.A('Silly multiples module') as it:
+    @it.should('Correctly check if a number is a multiple of 3 or 5')
+    def test_is_multiple():
         """ Tests the is_multiple_of_3_or_5 method"""
-        self.assertTrue(mut.is_multiple_of_3_or_5(3), "Expected to see that 3 was an multiple")
-        self.assertTrue(mut.is_multiple_of_3_or_5(5), "Expected to see that 5 was an multiple")
-        self.assertTrue(mut.is_multiple_of_3_or_5(3*3*5*5),
-                        "Expected to see that 9x25 was an multiple")
-        self.assertFalse(mut.is_multiple_of_3_or_5(7), "7 should not be a multiple")
+        assert mut.is_multiple_of_3_or_5(3), "Expected to see that 3 was an multiple"
+        assert mut.is_multiple_of_3_or_5(5), "Expected to see that 5 was an multiple"
+        assert mut.is_multiple_of_3_or_5(3*3*5*5),\
+                        "Expected to see that 9x25 was an multiple"
+        assert not(mut.is_multiple_of_3_or_5(7)), "7 should not be a multiple"
 
-    def test_sum(self):
+    @it.should('correctly sum up multiples of 3 and 5')
+    def test_sum():
         """ Tests the sum_of_3_5_multiples method. Only tests for positive numbers"""
-        self.assertEqual(mut.sum_of_3_5_multiples(10), 23, "Textbook example of 10 and 23 failed")
+        assert mut.sum_of_3_5_multiples(10) == 23, "Textbook example of 10 and 23 failed"
 
-    def test_exercise(self):
+    @it.should('solve the Euler problem correctly')
+    def test_exercise():
         """ TODO: Add a timer that fires if the calculation takes more than 1 second
             But that does not work on Windows so screw it """
-        self.assertEqual(mut.run_main(), 233168, "Correct answer should be 233168")
+        assert mut.run_main() == 233168, "Correct answer should be 233168"
+
+it.createTests(globals())
 
 if __name__ == '__main__':
-    unittest.main() # pragma: no cover
+    nose2.main() # pragma: no cover
