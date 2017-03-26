@@ -1,5 +1,6 @@
 """ Test class for ex_002_even_fib"""
 import unittest
+from itertools import takewhile
 from src import ex_002_even_fib as mut # mut = Module Under Test
 
 class Test001Multiples(unittest.TestCase):
@@ -7,7 +8,7 @@ class Test001Multiples(unittest.TestCase):
     def test_generator(self):
         """ Test the fibonacci generator"""
         less_than_90 = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-        generated = [fib_no for fib_no in mut.fibonacci_generator(90)]
+        generated = [fib_no for fib_no in takewhile(lambda x: x < 90, mut.fibonacci_generator())]
         self.assertTrue(less_than_90 == generated,
                         "Equals failed generated vs Hard coded {0}".format(generated))
 
