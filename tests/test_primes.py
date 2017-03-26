@@ -26,6 +26,7 @@ with such.A('My primes generator') as it:
         assert answer == primes_helper.get_factors(13195, primes_list)
     @it.should('Factorize a prime correctly')
     def test_factor_a_prime():
+        """ Ensure that a prime is factored correctly """
         generate_10 = list(islice(primes_helper.primes(), 10))
         ans = primes_helper.get_factors(31, generate_10)[-1]
         assert ans == 31

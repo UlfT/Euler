@@ -1,7 +1,5 @@
 """ Test code for ex_003_factors """
 
-from math import sqrt
-from itertools import islice, takewhile
 from nose2.tools import such
 import nose2
 from src import ex_003_factors
