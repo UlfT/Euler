@@ -25,8 +25,8 @@ def sum_of_even_fibonacci_numbers(upto):
 
 def run_main():
     """ Run the exercise as stated on the Euler website and wrapped in a timer"""
-    import src.tools.timer_decorator
-    wrapped_function = src.tools.timer_decorator.wrap(sum_of_even_fibonacci_numbers)
+    from  src.tools import timer_decorator
+    wrapped_function = timer_decorator.wrap(sum_of_even_fibonacci_numbers)
     return wrapped_function(4000000)
 
 if __name__ == "__main__":

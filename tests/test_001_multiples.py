@@ -1,7 +1,8 @@
 """ Tests for ex_001_multiples"""
 from nose2.tools import such
-import nose2 # pragma: no cover
-from src import ex_001_multiples as mut # mut = Module Under Test
+import nose2
+from src import ex_001_multiples as mut
+
 
 
 with such.A('Silly multiples module') as it:
