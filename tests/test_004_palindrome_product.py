@@ -3,7 +3,7 @@ from nose2.tools import such
 import nose2
 from src import ex_004_palindrome_product as mut
 
-with such.A('Palindrome exercise') as it:
+with such.A('Exercise 004 - Palindrome exercise') as it:
     @it.should('Calculate a 2x2 max palindrome correctly')
     def test_2_by_2():
         """ Test the 2x2 case """

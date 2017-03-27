@@ -5,7 +5,7 @@ from nose2.tools import params
 import nose2
 from src import ex_005_smallest_multiple as mut
 
-with such.A('Smallest multiple') as it:
+with such.A('Exercise 005 - Smallest multiple') as it:
     @it.should('Solve the task correctly for known values')
     @params((10, 2520), (20, 232792560))
     def test(case, question, answer):

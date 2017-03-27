@@ -10,7 +10,7 @@ from nose2.tools import params
 from src.tools import primes_helper
 
 
-with such.A('Primes generator') as it:
+with such.A('TOOLS - Primes generator') as it:
     @it.should('Generate the first 10 primes correctly')
     def test_first10():
         """ Try to generate the first 10 primes"""
@@ -25,6 +25,8 @@ with such.A('Primes generator') as it:
         maxno = int(sqrt(13195)) + 1
         primes_list = list(takewhile(lambda x: x <= maxno, primes_helper.primes()))
         assert answer == primes_helper.get_factors(13195, primes_list)
+
+
     @it.should('Factor a prime correctly using the two step model, asking for primes first')
     def test_factor_a_prime():
         """ Ensure that a prime is factored correctly """
