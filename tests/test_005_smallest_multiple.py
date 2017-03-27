@@ -1,4 +1,4 @@
-""" Test code for ex_003_factors """
+""" Test code for ex_005_smallest_multiple """
 
 from nose2.tools import such
 from nose2.tools import params
