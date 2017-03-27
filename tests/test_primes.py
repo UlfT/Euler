@@ -6,10 +6,11 @@ from math import sqrt
 from itertools import islice, takewhile
 import nose2
 from nose2.tools import such
+from nose2.tools import params
 from src.tools import primes_helper
 
 
-with such.A('My primes generator') as it:
+with such.A('Primes generator') as it:
     @it.should('Generate the first 10 primes correctly')
     def test_first10():
         """ Try to generate the first 10 primes"""
@@ -24,12 +25,25 @@ with such.A('My primes generator') as it:
         maxno = int(sqrt(13195)) + 1
         primes_list = list(takewhile(lambda x: x <= maxno, primes_helper.primes()))
         assert answer == primes_helper.get_factors(13195, primes_list)
-    @it.should('Factorize a prime correctly')
+    @it.should('Factor a prime correctly using the two step model, asking for primes first')
     def test_factor_a_prime():
         """ Ensure that a prime is factored correctly """
         generate_10 = list(islice(primes_helper.primes(), 10))
         ans = primes_helper.get_factors(31, generate_10)[-1]
         assert ans == 31
+
+    @it.should('Factor numbers correctly, using the automated model')
+    @params([2,3], [3,5,11], [3,7], [257])
+    def test_simple_factor(case, a_list):
+        """ Ensure that a few numbers are correctly factored """
+        to_check =  list_product(a_list)
+        case.assert_ (primes_helper.factor(to_check) == a_list, "got {}, looking for {}".format(
+            primes_helper.factor(to_check), a_list))
+
+    def list_product(a_list):
+        """ Helper function that multiplies all entries in a list """
+        from functools import reduce
+        return reduce(lambda x,y: x*y, a_list)
 
 it.createTests(globals())
 
