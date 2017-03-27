@@ -11,8 +11,10 @@ with such.A('Exercise 005 - Smallest multiple') as it:
     def test(case, question, answer):
         """ Run parameterizes tests"""
         case.assert_(mut.find_smallest_multiple(question) == answer)
+
     @it.should('Run the main example without crashing')
     def test_main():
+        """Just don't crash"""
         mut.run_main()
 
 it.createTests(globals())

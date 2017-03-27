@@ -35,17 +35,17 @@ with such.A('TOOLS - Primes generator') as it:
         assert ans == 31
 
     @it.should('Factor numbers correctly, using the automated model')
-    @params([2,3], [3,5,11], [3,7], [257])
+    @params([2, 3], [3, 5, 11], [3, 7], [257])
     def test_simple_factor(case, a_list):
         """ Ensure that a few numbers are correctly factored """
-        to_check =  list_product(a_list)
-        case.assert_ (primes_helper.factor(to_check) == a_list, "got {}, looking for {}".format(
+        to_check = list_product(a_list)
+        case.assert_(primes_helper.factor(to_check) == a_list, "got {}, looking for {}".format(
             primes_helper.factor(to_check), a_list))
 
     def list_product(a_list):
         """ Helper function that multiplies all entries in a list """
         from functools import reduce
-        return reduce(lambda x,y: x*y, a_list)
+        return reduce(lambda x, y: x*y, a_list)
 
 it.createTests(globals())
 

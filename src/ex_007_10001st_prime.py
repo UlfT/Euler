@@ -12,6 +12,7 @@ Answer:
 from src.tools import primes_helper
 
 def get_prime_no(prime_no):
+    """ Find prime numer prime_no"""
     primes = primes_helper.primes()
     for _ in range(1, prime_no):
         next(primes)
