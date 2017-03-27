@@ -17,6 +17,17 @@ with such.A('Exercise 005 - Smallest multiple') as it:
         """Just don't crash"""
         mut.run_main()
 
+    @it.should('Throw exception if a faulty state is reached')
+    def test_exception():
+        """ Make the module fail"""
+        try:
+            mut.calculate_new_multiple(18, 2)
+        except ValueError:
+            assert True
+        else:
+            assert False
+
+
 it.createTests(globals())
 
 if __name__ == '__main__':

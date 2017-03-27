@@ -28,7 +28,7 @@ def calculate_new_multiple(a_num, res):
     for attempt in factors:
         if (res* attempt) % a_num == 0:
             return res* attempt
-    raise Exception("Incorrect program state!") # pragma: no cover
+    raise ValueError("Incorrect program state!")
 
 def list_product(a_list):
     """ Helper function that multiplies all entries in a list """
