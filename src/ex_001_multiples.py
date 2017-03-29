@@ -3,6 +3,8 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000."""
+
+
 def is_multiple_of_3_or_5(to_test):
     """ Test if to_test is a multiple of 3 or 5.
     returns a boolean"""
@@ -17,6 +19,7 @@ def sum_of_3_5_multiples(upto):
             my_sum += counter
     return my_sum
 
+
 def run_main():
     """ Run the exercise as stated on the Euler website and wrapped in a timer"""
     from src.tools import timer_decorator
@@ -24,5 +27,4 @@ def run_main():
     return wrapped_function(1000)
 
 if __name__ == "__main__":
-    run_main() # pragma: no cover
-    
+    run_main()  # pragma: no cover

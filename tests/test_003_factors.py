@@ -3,7 +3,7 @@
 from nose2.tools import such
 import nose2
 from src import ex_003_factors
-with such.A('3rd exercise') as it:
+with such.A('Exercise 003 - Factoring') as it:
     @it.should('Solve the task correctly')
     def test():
         """ Do the factorization given in the assignment"""

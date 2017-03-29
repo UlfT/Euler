@@ -4,7 +4,7 @@ from nose2.tools import such
 import nose2
 from src import ex_002_even_fib as mut # mut = Module Under Test
 
-with such.A('Fibonacci generator') as it:
+with such.A('Exercise 002 - Fibonacci generator') as it:
     @it.should('Generate Fib numbers up to 90')
     def test_generator():
         """ Test the fibonacci generator"""

@@ -5,7 +5,7 @@ from src import ex_001_multiples as mut
 
 
 
-with such.A('Silly multiples module') as it:
+with such.A('Exercise 001 - Silly multiples module') as it:
     @it.should('Correctly check if a number is a multiple of 3 or 5')
     def test_is_multiple():
         """ Tests the is_multiple_of_3_or_5 method"""

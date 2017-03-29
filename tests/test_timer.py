@@ -3,7 +3,7 @@ from nose2.tools import such
 import nose2
 from src.tools import timer_decorator
 
-with such.A('Timer decorator') as it:
+with such.A('TOOLS - Timer decorator') as it:
     @it.should('return the correct value even though it is wrapped')
     def test_return_value():
         """ Tests that the correct return value is still returned"""
